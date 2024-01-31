@@ -1,8 +1,8 @@
-interface Recipe {
+export interface Recipe {
   type: string;
   name: string;
   level?: "Common" | "Uncommon" | "Rare" | "Epic";
-  ingredients: Array<{ name: string; quantity: number }>;
+  ingredients?: Array<{ name: string; quantity: number }>;
   buff?: Array<{ name: string; quantity: number | null }>;
   item_requirement?: string;
   use?: string;
@@ -367,12 +367,14 @@ export const RECIPES: Recipe[] = [
   {
     type: "Weapon",
     name: "Rare Longsword",
+    level: "Rare",
     ingredients: [{ name: "Copper Bar", quantity: 12 }],
     item_requirement: "Crafting Bench Lvl 3",
   },
   {
     type: "Weapon",
     name: "Epic Longsword",
+    level: "Epic",
     ingredients: [{ name: "Iron Bar", quantity: 12 }],
     item_requirement: "Crafting Bench Lvl 4",
   },
@@ -442,7 +444,8 @@ export const RECIPES: Recipe[] = [
   },
   {
     type: "Shield",
-    name: "Knight Shield - Uncommon",
+    name: "Uncommon Knight Shield",
+    level: "Uncommon",
     ingredients: [
       { name: "Flexwood Rod", quantity: 8 },
       { name: "Cord", quantity: 3 },
@@ -450,18 +453,21 @@ export const RECIPES: Recipe[] = [
   },
   {
     type: "Shield",
-    name: "Knight Shield - Rare",
+    name: "Rare Knight Shield",
+    level: "Rare",
     ingredients: [{ name: "Copper Bar", quantity: 15 }],
   },
   {
     type: "Shield",
-    name: "Knight Shield - Epic",
+    name: "Epic Knight Shield",
+    level: "Epic",
     ingredients: [{ name: "Iron Bar", quantity: 25 }],
   },
   // CHARMS
   {
     type: "Charm",
-    name: "Health Charm - Common",
+    name: "Common Health Charm",
+    level: "Common",
     ingredients: [{ name: "Silk Thread", quantity: 3 }],
     buff: [
       { name: "Heart", quantity: 1 },
@@ -470,7 +476,8 @@ export const RECIPES: Recipe[] = [
   },
   {
     type: "Charm",
-    name: "Cool-Headed Charm - Uncommon",
+    name: "Uncommon Cool-Headed Charm",
+    level: "Uncommon",
     ingredients: [
       { name: "Silk Thread", quantity: 3 },
       { name: "Marble", quantity: 1 },
@@ -484,7 +491,8 @@ export const RECIPES: Recipe[] = [
   },
   {
     type: "Charm",
-    name: "Health Charm - Uncommon",
+    name: "Uncommon Health Charm",
+    level: "Uncommon",
     ingredients: [
       { name: "Silk Thread", quantity: 3 },
       { name: "Marble", quantity: 1 },
@@ -497,7 +505,8 @@ export const RECIPES: Recipe[] = [
   },
   {
     type: "Charm",
-    name: "Hearty Totem - Uncommon",
+    name: "Uncommon Hearty Totem",
+    level: "Uncommon",
     ingredients: [
       { name: "Wool Thread", quantity: 3 },
       { name: "Cut Amber", quantity: 5 },
@@ -511,7 +520,8 @@ export const RECIPES: Recipe[] = [
   },
   {
     type: "Charm",
-    name: "Health Charm - Rare",
+    name: "Rare Health Charm",
+    level: "Rare",
     ingredients: [
       { name: "Wool Thread", quantity: 3 },
       { name: "Cut Amber", quantity: 3 },
@@ -525,7 +535,8 @@ export const RECIPES: Recipe[] = [
   },
   {
     type: "Charm",
-    name: "Inner Fire Charm - Rare",
+    name: "Rare Inner Fire Charm",
+    level: "Rare",
     ingredients: [
       { name: "Wool Thread", quantity: 3 },
       { name: "Cut Ruby", quantity: 5 },
@@ -540,7 +551,8 @@ export const RECIPES: Recipe[] = [
   },
   {
     type: "Charm",
-    name: "Regeneration Charm - Rare",
+    name: "Rare Regeneration Charm",
+    level: "Rare",
     ingredients: [
       { name: "Wool Thread", quantity: 3 },
       { name: "Copper Bar", quantity: 5 },
@@ -555,7 +567,8 @@ export const RECIPES: Recipe[] = [
   },
   {
     type: "Charm",
-    name: "Totem of the Immortal - Rare",
+    name: "Rare Totem of the Immortal",
+    level: "Rare",
     ingredients: [
       { name: "Wool Thread", quantity: 3 },
       { name: "Cut Amber", quantity: 5 },
@@ -570,7 +583,8 @@ export const RECIPES: Recipe[] = [
   },
   {
     type: "Charm",
-    name: "Charm of Resilience - Rare",
+    name: "Rare Charm of Resilience",
+    level: "Rare",
     ingredients: [
       { name: "Wool Thread", quantity: 3 },
       { name: "Copper Bar", quantity: 5 },
@@ -584,7 +598,8 @@ export const RECIPES: Recipe[] = [
   },
   {
     type: "Charm",
-    name: "Charm of Resilience - Epic",
+    name: "Epic Charm of Resilience",
+    level: "Epic",
     ingredients: [
       { name: "Heavy Wool Thread", quantity: 3 },
       { name: "Brightcore", quantity: 30 },
@@ -598,7 +613,8 @@ export const RECIPES: Recipe[] = [
   },
   {
     type: "Charm",
-    name: "Health Charm - Epic",
+    name: "Epic Health Charm",
+    level: "Epic",
     ingredients: [
       { name: "Heavy Wool Thread", quantity: 3 },
       { name: "Iron Bar", quantity: 5 },
@@ -609,7 +625,8 @@ export const RECIPES: Recipe[] = [
   },
   {
     type: "Charm",
-    name: "Inner Fire Charm - Epic",
+    name: "Epic Inner Fire Charm",
+    level: "Epic",
     ingredients: [
       { name: "Heavy Wool Thread", quantity: 3 },
       { name: "Brightcore", quantity: 30 },
@@ -623,7 +640,8 @@ export const RECIPES: Recipe[] = [
   },
   {
     type: "Charm",
-    name: "Regeneration Charm - Epic",
+    name: "Epic Regeneration Charm",
+    level: "Epic",
     ingredients: [
       { name: "Heavy Wool Thread", quantity: 3 },
       { name: "Cut Sapphire", quantity: 5 },
@@ -637,7 +655,8 @@ export const RECIPES: Recipe[] = [
   },
   {
     type: "Charm",
-    name: "Hearty Totem - Rare",
+    name: "Rare Hearty Totem",
+    level: "Rare",
     ingredients: [
       { name: "Heavy Wool Thread", quantity: 3 },
       { name: "Arctic Claw", quantity: 3 },
@@ -648,7 +667,8 @@ export const RECIPES: Recipe[] = [
   },
   {
     type: "Charm",
-    name: "Good Luck Charm - Rare",
+    name: "Rare Good Luck Charm",
+    level: "Rare",
     ingredients: [
       { name: "Heavy Wool Thread", quantity: 3 },
       { name: "Rough Ruby", quantity: 5 },
@@ -665,7 +685,8 @@ export const RECIPES: Recipe[] = [
   },
   {
     type: "Charm",
-    name: "Cool-Headed Charm - Rare",
+    name: "Rare Cool-Headed Charm",
+    level: "Rare",
     ingredients: [
       { name: "Heavy Wool Thread", quantity: 3 },
       { name: "Frost Shell", quantity: 5 },
@@ -693,8 +714,8 @@ export const RECIPES: Recipe[] = [
     name: "Grappler",
     ingredients: [
       { name: "Copper Bar", quantity: 3 },
-      { name: "Blast Powders", quantity: 3 },
-      { name: "Cords", quantity: 10 },
+      { name: "Blast Powder", quantity: 3 },
+      { name: "Cord", quantity: 10 },
     ],
     use: "Launch a plunger and get pulled to your target. For those hard-to-reach areas.",
   },
@@ -703,7 +724,7 @@ export const RECIPES: Recipe[] = [
     type: "Processed materials",
     name: "Cord",
     level: "Common",
-    ingredients: [{ name: "Vines", quantity: 5 }],
+    ingredients: [{ name: "Vine", quantity: 5 }],
     station: "Spinning Wheel",
   },
   {
@@ -859,9 +880,35 @@ export const RECIPES: Recipe[] = [
     ingredients: [{ name: "Malachite", quantity: 1 }],
     station: "Stone Breaker",
   },
+  // Raw Materials
+  {
+    type: "Raw Materials",
+    name: "Copper",
+    level: "Rare",
+  },
+  {
+    type: "Raw Materials",
+    name: "Iron",
+    level: "Epic",
+  },
+  {
+    type: "Raw Materials",
+    name: "Brightcore",
+    level: "Rare",
+  },
+  {
+    type: "Raw Materials",
+    name: "Blast Powder",
+    level: "Uncommon",
+  },
+  {
+    type: "Raw Materials",
+    name: "Vine",
+    level: "Common",
+  },
 ];
 
-export const RECIPES_BY_ITEM = RECIPES.reduce<{ [name: string]: Recipe }>(
+export const RECIPES_BY_NAME = RECIPES.reduce<{ [name: string]: Recipe }>(
   (acc, recipe) => ({ ...acc, [recipe.name]: recipe }),
   {}
 );
